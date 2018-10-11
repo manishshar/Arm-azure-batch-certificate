@@ -7,7 +7,8 @@
       "defaultValue": "mytestbatchservice"
     },
     "location": {
-      "type": "string"
+      "type": "string",
+      "defaultValue":"southeastasia"
       },
     "poolAllocationMode": {
       "type": "string",

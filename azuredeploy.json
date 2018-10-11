@@ -4,49 +4,34 @@
   "parameters": {
     "batchservice": {
       "type": "string",
-      "defaultValue": "mytestbatchservice"
+      "defaultValue": "batchaccount1"
     },
     "location": {
       "type": "string",
-      "defaultValue":"southeastasia"
-      },
-    "poolAllocationMode": {
-      "type": "string",
-      "defaultValue": "UserSubscription"
+      "defaultValue": "southeastasia"
     },
-    "storageAccountId": {
-      "type": "string",
-      "defaultValue": "/subscriptions/subscriptionid/resourceGroups/rg-storage/providers/Microsoft.Storage/storageAccounts/storageaccountname"
-
+    "certdata": {
+      "type": "securestring"
     },
-    "keyVaultReferenceid": {
-      "type": "string",
-      "defaultValue" : "/subscriptions/subscriptionid>/resourceGroups/rg-keyvault/providers/Microsoft.KeyVault/vaults/keyvaultbatchservice"
-    },
-    "keyVaultReferenceurl": {
-      "type": "string",
-      "defaultValue": "https://mykeyvaultname.vault.azure.net/"
+    "certthumbprint": {
+      "type": "string"
     }
 
   },
-  "variables": {},
+  "variables": {
+    "certname": "[concat(parameters('batchservice'), '/SHA1-', parameters('certthumbprint'))]"
+  },
   "resources": [
     {
-      "name": "[parameters('batchservice')]",
-      "type": "Microsoft.Batch/batchAccounts",
+      "name": "[variables('certname')]",
+      "type": "Microsoft.Batch/batchAccounts/certificates",
       "apiVersion": "2017-09-01",
-      "location": "[parameters('location')]",
       "properties": {
-        "autoStorage": {
-          "storageAccountId": "[parameters('storageAccountId')]"
-        },
-        "poolAllocationMode": "[parameters('poolAllocationMode')]",
-        "keyVaultReference": {
-          "id": "[parameters('keyVaultReferenceid')]",
-          "url": "[parameters('keyVaultReferenceurl')]"
-        }
-      },
-      "tags": {}
+        "format": "Cer",
+        "thumbprint": "[parameters('certthumbprint')]",
+        "thumbprintAlgorithm": "SHA1",
+        "data": "[parameters('certdata')]"
+      }
     }
   ]
 }

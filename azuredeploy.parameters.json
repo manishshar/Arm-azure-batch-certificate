@@ -2,23 +2,21 @@
   "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
   "contentVersion": "1.0.0.0",
   "parameters": {
-    "batchservice": {
-      "value": "mytestbatchservice"
-    },
     "location": {
       "value": "southeastasia"
     },
-    "poolAllocationMode": {
-      "value": "UserSubscription"
+    "certdata": {
+      "reference": {
+        "secretName": "batchcer",
+        "secretVersion": "35d2341fadff40f09fb924d266d49a67",
+        "keyVault": {
+          "id": "/subscriptions/c426db67-d1bb-4c54-8f9a-8fa9d596c859/resourceGroups/rg-keyvault/providers/Microsoft.KeyVault/vaults/testkeyvault112"
+        }
+      }
     },
-    "storageAccountId": {
-      "value": "/subscriptions/<subscriptionid>/resourceGroups/rg-storage/providers/Microsoft.Storage/storageAccounts/<storageaccountname>"
-    },
-    "keyVaultReferenceid": {
-      "value": "/subscriptions/<subscriptionid>/resourceGroups/rg-keyvault/providers/Microsoft.KeyVault/vaults/<keyvaultbatchservice>"
-    },
-    "keyVaultReferenceurl": {
-      "value": "https://<mykeyvaultname>.vault.azure.net/"
+    "certthumbprint": {
+      "value": "119C829BF06109144DFAE108E2CF2C0B430F4ACF"
     }
+
   }
 }

@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.27703.2042
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "arm-azure-batch-keyvault", "arm-azure-batch-keyvault.deployproj", "{71641F1F-96D9-4485-A25C-8F78779FA471}"
+Project("{151D2E53-A2C4-4D7D-83FE-D05416EBD58E}") = "arm-azure-batch-cert", "arm-azure-batch-cert.deployproj", "{71641F1F-96D9-4485-A25C-8F78779FA471}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

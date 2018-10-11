@@ -14,14 +14,17 @@
       "defaultValue": "UserSubscription"
     },
     "storageAccountId": {
-      "type": "string"
-    },
-    "keyVaultReferenceid": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "/subscriptions/<subscriptionid>/resourceGroups/rg-storage/providers/Microsoft.Storage/storageAccounts/<storageaccountname>"
 
     },
+    "keyVaultReferenceid": {
+      "type": "string",
+      "defaultValue" : "/subscriptions/<subscriptionid>/resourceGroups/rg-keyvault/providers/Microsoft.KeyVault/vaults/<keyvaultbatchservice>"
+    },
     "keyVaultReferenceurl": {
-      "type": "string"
+      "type": "string",
+      "defaultValue": "https://<mykeyvaultname>.vault.azure.net/"
     }
 
   },

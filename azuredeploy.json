@@ -1,0 +1,48 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentTemplate.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "batchservice": {
+      "type": "string",
+      "defaultValue": "mytestbatchservice"
+    },
+    "location": {
+      "type": "string"
+      },
+    "poolAllocationMode": {
+      "type": "string",
+      "defaultValue": "UserSubscription"
+    },
+    "storageAccountId": {
+      "type": "string"
+    },
+    "keyVaultReferenceid": {
+      "type": "string"
+
+    },
+    "keyVaultReferenceurl": {
+      "type": "string"
+    }
+
+  },
+  "variables": {},
+  "resources": [
+    {
+      "name": "[parameters('batchservice')]",
+      "type": "Microsoft.Batch/batchAccounts",
+      "apiVersion": "2017-09-01",
+      "location": "[parameters('location')]",
+      "properties": {
+        "autoStorage": {
+          "storageAccountId": "[parameters('storageAccountId')]"
+        },
+        "poolAllocationMode": "[parameters('poolAllocationMode')]",
+        "keyVaultReference": {
+          "id": "[parameters('keyVaultReferenceid')]",
+          "url": "[parameters('keyVaultReferenceurl')]"
+        }
+      },
+      "tags": {}
+    }
+  ]
+}

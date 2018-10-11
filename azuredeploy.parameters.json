@@ -1,0 +1,24 @@
+{
+  "$schema": "https://schema.management.azure.com/schemas/2015-01-01/deploymentParameters.json#",
+  "contentVersion": "1.0.0.0",
+  "parameters": {
+    "batchservice": {
+      "value": "mytestbatchservice"
+    },
+    "location": {
+      "value": "southeastasia"
+    },
+    "poolAllocationMode": {
+      "value": "UserSubscription"
+    },
+    "storageAccountId": {
+      "value": "/subscriptions/<subscriptionid>/resourceGroups/rg-storage/providers/Microsoft.Storage/storageAccounts/<storageaccountname>"
+    },
+    "keyVaultReferenceid": {
+      "value": "/subscriptions/<subscriptionid>/resourceGroups/rg-keyvault/providers/Microsoft.KeyVault/vaults/<keyvaultbatchservice>"
+    },
+    "keyVaultReferenceurl": {
+      "value": "https://<mykeyvaultname>.vault.azure.net/"
+    }
+  }
+}

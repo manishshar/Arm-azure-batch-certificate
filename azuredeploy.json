@@ -15,16 +15,16 @@
     },
     "storageAccountId": {
       "type": "string",
-      "defaultValue": "/subscriptions/<subscriptionid>/resourceGroups/rg-storage/providers/Microsoft.Storage/storageAccounts/<storageaccountname>"
+      "defaultValue": "/subscriptions/subscriptionid/resourceGroups/rg-storage/providers/Microsoft.Storage/storageAccounts/storageaccountname"
 
     },
     "keyVaultReferenceid": {
       "type": "string",
-      "defaultValue" : "/subscriptions/<subscriptionid>/resourceGroups/rg-keyvault/providers/Microsoft.KeyVault/vaults/<keyvaultbatchservice>"
+      "defaultValue" : "/subscriptions/subscriptionid>/resourceGroups/rg-keyvault/providers/Microsoft.KeyVault/vaults/keyvaultbatchservice"
     },
     "keyVaultReferenceurl": {
       "type": "string",
-      "defaultValue": "https://<mykeyvaultname>.vault.azure.net/"
+      "defaultValue": "https://mykeyvaultname.vault.azure.net/"
     }
 
   },
